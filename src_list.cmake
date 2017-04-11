@@ -1,4 +1,4 @@
-set( GSL_SOURCE_DIR "${CMAKE_SOURCE_DIR}/gsl-1.0")
+set( GSL_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/gsl-1.0")
 set( GSL_SOURCES 
   ${GSL_SOURCE_DIR}/dht/dht.c
   ${GSL_SOURCE_DIR}/ode-initval/control.c
