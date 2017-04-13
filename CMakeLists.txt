@@ -1,7 +1,11 @@
 # Build a static library for the EbbRT native platform
 cmake_minimum_required(VERSION 2.6)
-set( GSL_SOURCE_DIR "(${CMAKE_CURRENT_SOURCE_DIR}/gsl-1.0")
 project("ebbrt-libgsl" C CXX)
+set(CMAKE_C_FLAGS_DEBUG          "-O0 -g3")
+set(CMAKE_C_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
+set(CMAKE_C_FLAGS_RELEASE        "-O4 -flto -DNDEBUG")
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g3")
+set(GSL_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/gsl-1.0")
 include(${CMAKE_CURRENT_SOURCE_DIR}/src_list.cmake)
 include_directories(${GSL_SOURCE_DIR})
 add_library(gsl STATIC ${GSL_SOURCES})
